@@ -1,17 +1,18 @@
 ---
 # Base Image
-ee_base_image: registry.redhat.io/ansible-automation-platform-25/ee-minimal-rhel8:latest
+ee_base_image: registry.redhat.io/ansible-automation-platform-25/ee-supported-rhel8:latest
 ee_base_registry_username: mkletz
 
 ee_registry_dest: "aap-hub-aap.apps.mitchell-labs.mikemitchell.info"
 ee_registry_username: admin
 
 ee_list:
-  - name: ee-mitchell-labs
+  - name: ee-mitchell-labs-ocpvirt
     dependencies:
       galaxy:
         collections:
           - name: redhat.openshift_virtualization
+            version: 4.0.1
 
 ## Example Variable
 # ee_list:
