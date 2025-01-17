@@ -1,11 +1,15 @@
 ---
 # Base Image
 ee_base_image: registry.redhat.io/ansible-automation-platform-25/ee-minimal-rhel8:latest
-ee_registry_dest: docker.io
+ee_registry_dest: "aap-hub-aap.apps.mitchell-labs.mikemitchell.info"
+ee_registry_username: admin
 
-# Git Login
-# git_user: someUser
-# git_password: somePassword
+ee_list:
+  - name: ee-mitchell-labs
+    dependencies:
+      galaxy:
+        collections:
+          - name: redhat.openshift_virtualization
 
 ## Example Variable
 # ee_list:
@@ -41,10 +45,3 @@ ee_registry_dest: docker.io
 #         - ADD _build/folders/test.yml /etc/ansible/test.yml
 #       append_final:
 #         - RUN echo This is a post-install command!
-
-ee_list:
-  - name: ee-mitchell-labs
-    dependencies:
-      galaxy:
-        collections:
-          - name: redhat.openshift_virtualization
