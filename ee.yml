@@ -43,7 +43,7 @@ ee_registry_dest: docker.io
 #         - RUN echo This is a post-install command!
 
 ee_list:
-  - name: ee-ocp-virt
+  - name: ee-mitchell-labs
     dependencies:
       galaxy:
         collections:
