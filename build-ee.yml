@@ -9,7 +9,7 @@
     - ee.yml
 
   pre_tasks:
-    - name: Install Podman
+    - name: Install Dependencies
       ansible.builtin.dnf:
         name:
           - podman
