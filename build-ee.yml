@@ -10,8 +10,10 @@
 
   pre_tasks:
     - name: Install Podman
-      ansible.builtin.yum:
-        name: podman
+      ansible.builtin.dnf:
+        name:
+          - podman
+          - python3-pip
 
     - name: Install ansible-builder with pip
       ansible.builtin.pip:
