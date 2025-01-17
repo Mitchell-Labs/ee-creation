@@ -1,0 +1,50 @@
+---
+# Base Image
+ee_base_image: registry.redhat.io/ansible-automation-platform-25/ee-minimal-rhel8:latest
+ee_registry_dest: docker.io
+
+# Git Login
+# git_user: someUser
+# git_password: somePassword
+
+## Example Variable
+# ee_list:
+#   - name: custom_ee
+#     alt_name: Custom EE
+#     tag: 1-11-21-2
+#     dependencies:
+#       system:
+#       - python-requests
+#       - python-pyyaml
+#       python:
+#         - pytz
+#         - python-dateutil>=2.7.0
+#         - awxkit
+#       galaxy:
+#         collections:
+#           - name: awx.awx
+#             version: 22.4.0
+#           - infra.controller_configuration
+#           - ansible.controller
+#           - infra.ah_configuration
+#     build_items:
+#       - files/
+#       - test.yml
+#     build_files:
+#       - src: files/stuff.txt
+#         dest: folders
+#       - src: test.yml
+#         dest: folders
+#     build_steps:
+#       prepend_final:
+#         - ADD _build/folders/stuff.txt /etc/ansible/stuff.txt
+#         - ADD _build/folders/test.yml /etc/ansible/test.yml
+#       append_final:
+#         - RUN echo This is a post-install command!
+
+ee_list:
+  - name: ee-ocp-virt
+    dependencies:
+      galaxy:
+        collections:
+          - name: redhat.openshift_virtualization

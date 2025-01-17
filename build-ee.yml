@@ -1,0 +1,23 @@
+---
+- name: Publish EE
+  hosts: rhel
+  gather_facts: true
+  environment:
+    PATH: /sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin
+
+  vars_files:
+    - ee.yml
+
+  pre_tasks:
+    - name: Install Podman
+      ansible.builtin.yum:
+        name: podman
+
+    - name: Install ansible-builder with pip
+      ansible.builtin.pip:
+        name:
+          - ansible
+          - ansible-builder
+
+  roles:
+    - infra.ee_utilities.ee_builder
