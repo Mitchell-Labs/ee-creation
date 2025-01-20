@@ -9,27 +9,27 @@
         kind: cloud
         inputs:
           fields:
-            - id: ee_base_registry_username
+            - id: base_registry_username
               type: string
               label: EE Base Registry Username
-            - id: ee_base_registry_password
+            - id: base_registry_password
               type: string
               label: EE Base Registry Password
               secret: true
-            - id: ee_registry_dest
+            - id: registry_dest
               type: string
               label: Destination registry
-            - id: ee_registry_username
+            - id: registry_username
               type: string
               label: Destination registry Username
-            - id: ee_registry_password
+            - id: registry_password
               type: string
               label: Destination registry Password
               secret: true
-            - id: ee_ah_host
+            - id: ah_host
               type: string
               label: EE Automation Hub
-            - id: ee_ah_token
+            - id: ah_token
               type: string
               label: EE Automation Hub Token
               secret: true
@@ -41,3 +41,12 @@
             - ee_registry_password
             - ee_ah_host
             - ee_ah_token
+        injectors:
+          extra_vars:
+            - base_registry_username: '{{ ee_base_registry_username }}'
+            - base_registry_password: '{{ ee_base_registry_password }}'
+            - registry_dest: '{{ ee_registry_dest }}'
+            - registry_username: '{{ ee_registry_username }}'
+            - registry_password: '{{ ee_registry_password }}'
+            - ah_host: '{{ ee_ah_host }}'
+            - ah_token: '{{ ee_ah_token }}'
