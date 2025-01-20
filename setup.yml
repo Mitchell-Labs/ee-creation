@@ -1,0 +1,43 @@
+- name: Create credential type
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: "Add EE Builder credential type"
+      ansible.controller.credential_type:
+        name: "EE Builder"
+        description: "Credentials utilized by infra.ee_utilities.ee_builder"
+        kind: cloud
+        inputs:
+          fields:
+            - id: ee_base_registry_username
+              type: string
+              label: EE Base Registry Username
+            - id: ee_base_registry_password
+              type: string
+              label: EE Base Registry Password
+              secret: true
+            - id: ee_registry_dest
+              type: string
+              label: Destination registry
+            - id: ee_registry_username
+              type: string
+              label: Destination registry Username
+            - id: ee_registry_password
+              type: string
+              label: Destination registry Password
+              secret: true
+            - id: ee_ah_host
+              type: string
+              label: EE Automation Hub
+            - id: ee_ah_token
+              type: string
+              label: EE Automation Hub Token
+              secret: true
+          required:
+            - ee_base_registry_username
+            - ee_base_registry_password
+            - ee_registry_dest
+            - ee_registry_username
+            - ee_registry_password
+            - ee_ah_host
+            - ee_ah_token
