@@ -9,7 +9,7 @@ ee_registry_username: admin
 ee_list:
   - name: ee-mitchell-labs-ocpvirt
     options:
-      - package_manager_path: /usr/bin/microdnf
+      package_manager_path: /usr/bin/microdnf
     build_files:
       - src: build_files/openshift-clients-4.17.0-202412120604.p0.gf4525b8.assembly.stream.el9.x86_64.rpm
         dest: rpms
