@@ -3,7 +3,7 @@
 ee_base_image: registry.redhat.io/ansible-automation-platform-25/ee-minimal-rhel9:latest
 ee_base_registry_username: mkletz
 
-ee_registry_dest: "aap-hub-aap.apps.mitchell-labs.mikemitchell.info"
+ee_registry_dest: "aap-aap.apps.mitchell-labs.mikemitchell.info"
 ee_registry_username: admin
 
 ee_list:
