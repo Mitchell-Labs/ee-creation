@@ -15,10 +15,10 @@ ee_list:
         dest: rpms
     build_steps:
       prepend_base:
-      - RUN $PYCMD -m pip install --upgrade pip setuptools
-      - COPY _build/rpms/openshift-clients*.rpm /tmp/openshift-clients.rpm
-      - RUN $PKGMGR -y update && $PKGMGR -y install bash-completion && $PKGMGR clean all
-      - RUN rpm -ivh /tmp/openshift-clients.rpm && rm /tmp/openshift-clients.rpm
+        - RUN $PYCMD -m pip install --upgrade pip setuptools
+        - COPY _build/rpms/openshift-clients*.rpm /tmp/openshift-clients.rpm
+        - RUN $PKGMGR -y update && $PKGMGR -y install bash-completion && $PKGMGR clean all
+        - RUN rpm -ivh /tmp/openshift-clients.rpm && rm /tmp/openshift-clients.rpm
     dependencies:
       galaxy:
         collections:
