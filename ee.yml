@@ -16,7 +16,7 @@ ee_list:
     build_steps:
       prepend_base:
         - RUN $PYCMD -m pip install --upgrade pip setuptools
-        - ADD _build/rpms/openshift-clients*.rpm /tmp/openshift-clients.rpm
+        - COPY _build/rpms/openshift-clients-4.17.0-202412120604.p0.gf4525b8.assembly.stream.el9.x86_64.rpm /tmp/openshift-clients.rpm
         - RUN $PKGMGR -y update && $PKGMGR -y install bash-completion && $PKGMGR clean all
         - RUN rpm -ivh /tmp/openshift-clients.rpm && rm /tmp/openshift-clients.rpm
     dependencies:
