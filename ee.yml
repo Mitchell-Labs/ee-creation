@@ -8,6 +8,7 @@ ee_registry_username: admin
 
 ee_list:
   - name: ee-mitchell-labs-ocpvirt
+    tag: 01-20-2025
     options:
       package_manager_path: /usr/bin/microdnf
     build_items:
