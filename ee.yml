@@ -11,7 +11,7 @@ ee_list:
     options:
       package_manager_path: /usr/bin/microdnf
     build_files:
-      - src: files/openshift-clients-4.17.0-202412120604.p0.gf4525b8.assembly.stream.el9.x86_64.rpm
+      - src: openshift-clients-4.17.0-202412120604.p0.gf4525b8.assembly.stream.el9.x86_64.rpm
         dest: rpms
     build_steps:
       prepend_base:
