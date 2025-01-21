@@ -23,8 +23,7 @@ ee_list:
       python_interpreter:
         python_path: "/usr/bin/python3.11"
       system:
-        - python-devel
-        - gcc
+        - python3-devel
       galaxy:
         collections:
           #General
