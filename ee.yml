@@ -24,11 +24,11 @@ ee_list:
           #General
           # - name: community.general
           # AAP
-          - name: ansible.controller
-          - name: ansible.platform
+          # - name: ansible.controller
+          # - name: ansible.platform
           # OCP
           - name: redhat.openshift_virtualization
           # Windows
-          - name: microsoft.ad
-          - name: chocolatey.chocolatey
-          - name: ansible.windows
+          # - name: microsoft.ad
+          # - name: chocolatey.chocolatey
+          # - name: ansible.windows
