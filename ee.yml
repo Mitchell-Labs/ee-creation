@@ -22,7 +22,7 @@ ee_list:
       galaxy:
         collections:
           #General
-          # - name: community.general
+          - name: community.general
           # AAP
           - name: ansible.controller
           - name: ansible.platform
