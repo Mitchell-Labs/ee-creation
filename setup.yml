@@ -62,7 +62,7 @@
           base_registry_username: "mkletz"
           base_registry_password: "change_me"
           registry_dest: "aap-aap.apps.mitchell-labs.mikemitchell.info/mitchell_labs"
-          registry_username: "Admin"
+          registry_username: "admin"
           registry_password: "change_me"
           ah_host: "aap-aap.apps.mitchell-labs.mikemitchell.info"
           ah_token: "change_me"
