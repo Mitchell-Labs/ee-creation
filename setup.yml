@@ -59,13 +59,13 @@
         state: present
         update_secrets: false
         inputs:
-          - base_registry_username: "mkletz"
-          - base_registry_password: "change_me"
-          - registry_dest: "change_me"
-          - registry_username: "Admin"
-          - registry_password: "change_me"
-          - ah_host: "change_me"
-          - ah_token: "change_me"
+          base_registry_username: "mkletz"
+          base_registry_password: "change_me"
+          registry_dest: "change_me"
+          registry_username: "Admin"
+          registry_password: "change_me"
+          ah_host: "change_me"
+          ah_token: "change_me"
 
     - name: "Add job template"
       ansible.controller.job_template:
