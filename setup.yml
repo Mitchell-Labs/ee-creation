@@ -79,6 +79,6 @@
         become_enabled: true
         credential:
           - "EE Builder"
-          - "RHEL admin"
+          - "RHEL Admin"
         labels:
           - "AAP"
