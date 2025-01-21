@@ -24,8 +24,8 @@ ee_list:
           #General
           # - name: community.general
           # AAP
-          # - name: ansible.controller
-          # - name: ansible.platform
+          - name: ansible.controller
+          - name: ansible.platform
           # OCP
           - name: redhat.openshift_virtualization
           # Windows
