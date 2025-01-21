@@ -1,18 +1,14 @@
 ---
 # Base Image
 ee_base_image: registry.redhat.io/ansible-automation-platform-25/ee-minimal-rhel9:latest
-ee_base_registry_username: mkletz
-
-ee_registry_dest: "aap-aap.apps.mitchell-labs.mikemitchell.info/mitchell_labs"
-ee_registry_username: admin
 
 ee_list:
   - name: ee-mitchell-labs-ocpvirt
-    tag: 01-20-2025
+    tag: "{{ now(fmt='%mm-%dd-%YYYY') }}"
     options:
       package_manager_path: /usr/bin/microdnf
     build_items:
-      - openshift-clients-4.17.0-202412120604.p0.gf4525b8.assembly.stream.el9.x86_64.rpm
+      - files/
     build_files:
       - src: openshift-clients-4.17.0-202412120604.p0.gf4525b8.assembly.stream.el9.x86_64.rpm
         dest: rpms
