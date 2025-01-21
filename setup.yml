@@ -43,10 +43,10 @@
             - ee_ah_token
         injectors:
           extra_vars:
-            - ee_base_registry_username: 'base_registry_username'
-            - ee_base_registry_password: 'base_registry_password'
-            - ee_registry_dest: 'registry_dest'
-            - ee_registry_username: 'registry_username'
-            - ee_registry_password: 'registry_password'
-            - ee_ah_host: 'ah_host'
-            - ee_ah_token: 'ah_token'
+            ee_base_registry_username: 'base_registry_username'
+            ee_base_registry_password: 'base_registry_password'
+            ee_registry_dest: 'registry_dest'
+            ee_registry_username: 'registry_username'
+            ee_registry_password: 'registry_password'
+            ee_ah_host: 'ah_host'
+            ee_ah_token: 'ah_token'
