@@ -5,7 +5,7 @@ ocp_rpm_name: "openshift-clients-4.17.0-202412120604.p0.gf4525b8.assembly.stream
 
 ee_list:
   - name: ee-mitchell-labs-ocpvirt
-    tag: "{{ now(fmt='%mm-%dd-%YYYY') }}"
+    tag: "{{ now(fmt='%m-%d-%Y') }}"
     options:
       package_manager_path: /usr/bin/microdnf
     build_items:
