@@ -1,6 +1,7 @@
 ---
 # Base Image
 ee_base_image: registry.redhat.io/ansible-automation-platform-25/ee-minimal-rhel9:latest
+# download from access.redhat.com -> Downloads -> OpenShift Container Platform -> Packages
 ocp_rpm_name: "openshift-clients-4.17.0-202412120604.p0.gf4525b8.assembly.stream.el9.x86_64.rpm"
 
 ee_list:
@@ -29,6 +30,6 @@ ee_list:
           # OCP
           - name: redhat.openshift_virtualization
           # Windows
-          - name: microsoft.ad
-          # - name: chocolatey.chocolatey
-          # - name: ansible.windows
+          # - name: microsoft.ad
+          - name: chocolatey.chocolatey
+          - name: ansible.windows
