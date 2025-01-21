@@ -4,10 +4,8 @@ ee_base_image: registry.redhat.io/ansible-automation-platform-25/ee-minimal-rhel
 ocp_rpm_name: "openshift-clients-4.17.0-202412120604.p0.gf4525b8.assembly.stream.el9.x86_64.rpm"
 
 ee_list:
-  - name: ee-mitchell-labs-ocpvirt
+  - name: ee-mitchell-labs-default
     tag: "{{ now(fmt='%m-%d-%Y') }}"
-    # options:
-    #   package_manager_path: /usr/bin/microdnf
     build_items:
       - "{{ ocp_rpm_name }}"
     build_files:
@@ -16,45 +14,21 @@ ee_list:
     build_steps:
       prepend_base:
         - RUN $PYCMD -m pip install --upgrade pip setuptools
+        # dependencies for redhat.openshift_virtualization
         - COPY _build/rpms/openshift-clients*.rpm /tmp/openshift-clients.rpm
         - RUN $PKGMGR -y update && $PKGMGR -y install bash-completion && $PKGMGR clean all
         - RUN rpm -ivh /tmp/openshift-clients.rpm && rm /tmp/openshift-clients.rpm
     dependencies:
       galaxy:
         collections:
+          #General
+          - name: community.general
+          # AAP
+          - name: ansible.controller
+          - name: ansible.platform
+          # OCP
           - name: redhat.openshift_virtualization
-
-## Example Variable
-# ee_list:
-#   - name: custom_ee
-#     alt_name: Custom EE
-#     tag: 1-11-21-2
-#     dependencies:
-#       system:
-#       - python-requests
-#       - python-pyyaml
-#       python:
-#         - pytz
-#         - python-dateutil>=2.7.0
-#         - awxkit
-#       galaxy:
-#         collections:
-#           - name: awx.awx
-#             version: 22.4.0
-#           - infra.controller_configuration
-#           - ansible.controller
-#           - infra.ah_configuration
-#     build_items:
-#       - files/
-#       - test.yml
-#     build_files:
-#       - src: files/stuff.txt
-#         dest: folders
-#       - src: test.yml
-#         dest: folders
-#     build_steps:
-#       prepend_final:
-#         - ADD _build/folders/stuff.txt /etc/ansible/stuff.txt
-#         - ADD _build/folders/test.yml /etc/ansible/test.yml
-#       append_final:
-#         - RUN echo This is a post-install command!
+          # Windows
+          - name: microsoft.ad
+          - name: chocolatey.chocolatey
+          - name: ansible.windows
