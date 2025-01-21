@@ -1,6 +1,7 @@
 ---
 # Base Image
 ee_base_image: registry.redhat.io/ansible-automation-platform-25/ee-minimal-rhel9:latest
+ocp_rpm_name: "openshift-clients-4.17.0-202412120604.p0.gf4525b8.assembly.stream.el9.x86_64.rpm"
 
 ee_list:
   - name: ee-mitchell-labs-ocpvirt
@@ -8,9 +9,9 @@ ee_list:
     options:
       package_manager_path: /usr/bin/microdnf
     build_items:
-      - files/
+      - "{{ ocp_rpm_name }}"
     build_files:
-      - src: openshift-clients-4.17.0-202412120604.p0.gf4525b8.assembly.stream.el9.x86_64.rpm
+      - src: "{{ ocp_rpm_name }}"
         dest: rpms
     build_steps:
       prepend_base:
