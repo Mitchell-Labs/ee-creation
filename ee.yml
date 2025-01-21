@@ -24,6 +24,7 @@ ee_list:
         python_path: "/usr/bin/python3.11"
       system:
         - python-devel
+        - gcc
       galaxy:
         collections:
           #General
