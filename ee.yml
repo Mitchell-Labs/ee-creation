@@ -22,6 +22,8 @@ ee_list:
     dependencies:
       python_interpreter:
         python_path: "/usr/bin/python3.11"
+      system:
+        - python-devel
       galaxy:
         collections:
           #General
