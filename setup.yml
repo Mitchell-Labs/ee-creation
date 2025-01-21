@@ -77,8 +77,8 @@
         playbook: "build-ee.yml"
         state: "present"
         become_enabled: true
-        credential:
+        credentials:
           - "EE Builder"
-          - "RHEL Admin"
+          - "RHEL admin"
         labels:
           - "AAP"
