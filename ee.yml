@@ -33,7 +33,7 @@ ee_list:
         - libxslt-devel [platform:rpm]
       galaxy:
         collections:
-          #General
+          # General
           - name: community.general
           # AAP
           - name: ansible.controller
