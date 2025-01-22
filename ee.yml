@@ -23,6 +23,7 @@ ee_list:
       python_interpreter:
         python_path: "/usr/bin/python3.11"
       system:
+        # Required for microsoft.ad, needs to match version of python_path
         - python3.11-devel [platform:rpm]
       galaxy:
         collections:
