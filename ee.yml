@@ -23,7 +23,7 @@ ee_list:
       python_interpreter:
         python_path: "/usr/bin/python3.11"
       system:
-        - python311-devel [platform:rpm]
+        - python3.11-devel [platform:rpm]
       galaxy:
         collections:
           # General
