@@ -17,13 +17,12 @@ ee_list:
         - RUN $PYCMD -m pip install --upgrade pip setuptools
         # dependencies for redhat.openshift_virtualization
         - COPY _build/rpms/openshift-clients*.rpm /tmp/openshift-clients.rpm
-        - RUN $PKGMGR -y update && $PKGMGR -y install bash-completion && $PKGMGR clean all
+        - RUN $PKGMGR -y update && $PKGMGR -y install bash-completion python3-devel && $PKGMGR clean all
         - RUN rpm -ivh /tmp/openshift-clients.rpm && rm /tmp/openshift-clients.rpm
+        - RUN
     dependencies:
       python_interpreter:
         python_path: "/usr/bin/python3.11"
-      system:
-        - python3-devel
       galaxy:
         collections:
           #General
