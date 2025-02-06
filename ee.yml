@@ -34,6 +34,7 @@ ee_list:
           - name: ansible.platform
           # OCP
           - name: redhat.openshift_virtualization
+          - name: redhat.openshift
           # Windows
           - name: microsoft.ad
           - name: chocolatey.chocolatey
