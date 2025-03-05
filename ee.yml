@@ -22,6 +22,10 @@ ee_list:
     dependencies:
       python_interpreter:
         python_path: "/usr/bin/python3.11"
+      python:
+        # Zabbix
+        - netaddr>=0.8.0
+        - Jinja2>=3.1.2
       system:
         # Required for microsoft.ad, needs to match version of python_path
         - python3.11-devel [platform:rpm]
@@ -39,3 +43,7 @@ ee_list:
           - name: microsoft.ad
           - name: chocolatey.chocolatey
           - name: ansible.windows
+          # zabbix
+          - name: zabbix.zabbix
+          - name: ansible.utils
+          - name: ansible.posix
