@@ -43,6 +43,7 @@ ee_list:
           - name: microsoft.ad
           - name: chocolatey.chocolatey
           - name: ansible.windows
+          - name: community.windows
           # zabbix
           - name: zabbix.zabbix
           - name: ansible.utils
