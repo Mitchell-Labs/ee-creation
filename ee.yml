@@ -30,6 +30,7 @@ ee_list:
         # Zabbix
         - netaddr>=0.8.0
         - Jinja2>=3.1.2
+        # Windows
         - pykerberos==1.2.4
       system:
         # Required for microsoft.ad, needs to match version of python_path
