@@ -30,6 +30,7 @@ ee_list:
         # Zabbix
         - netaddr>=0.8.0
         - Jinja2>=3.1.2
+        - pykerberos
       system:
         # Required for microsoft.ad, needs to match version of python_path
         - python3.11-devel [platform:rpm]
