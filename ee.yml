@@ -32,6 +32,8 @@ ee_list:
         - Jinja2>=3.1.2
         # Windows
         - pykerberos==1.2.4
+        # Linux
+        - firewall
       system:
         # Required for microsoft.ad, needs to match version of python_path
         - python3.11-devel [platform:rpm]
