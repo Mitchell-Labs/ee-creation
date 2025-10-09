@@ -17,9 +17,9 @@ ee_list:
     build_items:
       - files
     build_files:
-      - src: "{{ ocp_rpm_name }}"
+      - src: "files/{{ ocp_rpm_name }}"
         dest: folders
-      - src: "krb5.conf"
+      - src: "files/krb5.conf"
         dest: folders
     build_steps:
       prepend_base:
