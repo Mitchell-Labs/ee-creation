@@ -4,7 +4,7 @@ ee_base_image: registry.redhat.io/ansible-automation-platform-26/ee-minimal-rhel
 ee_aap_version: 2.6
 ee_update_base_images: true
 ee_builder_dir_clean: true
-# ee_builder_dir: "."
+# ee_builder_dir: "/tmp"
 ee_pull_collections_from_hub: true
 ee_verbosity: 1
 
@@ -18,9 +18,9 @@ ee_list:
       - "{{ ocp_rpm_name }}"
       - "krb5.conf"
     build_files:
-      - src: "files/{{ ocp_rpm_name }}"
+      - src: "./files/{{ ocp_rpm_name }}"
         dest: folders
-      - src: files/krb5.conf
+      - src: "./files/krb5.conf"
         dest: folders
     build_steps:
       prepend_base:
