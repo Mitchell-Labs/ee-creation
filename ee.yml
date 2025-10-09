@@ -15,7 +15,7 @@ ee_list:
   - name: ee-mitchell-labs-default
     tag: "{{ now(fmt='%m-%d-%Y') }}"
     build_items:
-      - files
+      - files/
     build_files:
       - src: "files/{{ ocp_rpm_name }}"
         dest: folders
