@@ -18,16 +18,16 @@ ee_list:
       - "{{ ocp_rpm_name }}"
       - "krb5.conf"
     build_files:
-      - src: "{{ ocp_rpm_name }}"
-        dest: rpms
-      - src: "krb5.conf"
-        dest: rpms
+      - src: "files/{{ ocp_rpm_name }}"
+        dest: folders
+      - src: files/krb5.conf
+        dest: folders
     build_steps:
       prepend_base:
         - RUN $PYCMD -m pip install --upgrade pip setuptools
-        # - COPY _build/rpms/krb5.conf /etc/krb5.conf
+        - ADD _build/folders/krb5.conf /etc/krb5.conf
         # dependencies for redhat.openshift_virtualization
-        - COPY _build/rpms/openshift-clients*.rpm /tmp/openshift-clients.rpm
+        - ADD _build/folders/openshift-clients*.rpm /tmp/openshift-clients.rpm
         - RUN $PKGMGR -y update && $PKGMGR -y install bash-completion && $PKGMGR clean all
         - RUN rpm -ivh /tmp/openshift-clients.rpm && rm /tmp/openshift-clients.rpm
     dependencies:
