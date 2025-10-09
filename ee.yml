@@ -15,12 +15,12 @@ ee_list:
   - name: ee-mitchell-labs-default
     tag: "{{ now(fmt='%m-%d-%Y') }}"
     build_items:
-      - "{{ ocp_rpm_name }}"
-      - "krb5.conf"
+      - "./files/{{ ocp_rpm_name }}"
+      - "./files/krb5.conf"
     build_files:
-      - src: "./files/{{ ocp_rpm_name }}"
+      - src: "{{ ocp_rpm_name }}"
         dest: folders
-      - src: "./files/krb5.conf"
+      - src: "krb5.conf"
         dest: folders
     build_steps:
       prepend_base:
