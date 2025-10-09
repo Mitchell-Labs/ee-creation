@@ -3,6 +3,10 @@
 ee_base_image: registry.redhat.io/ansible-automation-platform-26/ee-minimal-rhel9:latest
 ee_aap_version: 2.6
 ee_update_base_images: true
+ee_builder_dir_clean: true
+ee_builder_dir: "/tmp"
+ee_pull_collections_from_hub: true
+ee_verbosity: 1
 
 # download from access.redhat.com -> Downloads -> OpenShift Container Platform -> Packages
 ocp_rpm_name: "openshift-clients-4.19.0-202506301438.p0.g298429b.assembly.stream.el9.x86_64.rpm"
