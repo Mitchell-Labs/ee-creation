@@ -4,7 +4,7 @@ ee_base_image: registry.redhat.io/ansible-automation-platform-26/ee-minimal-rhel
 ee_aap_version: 2.6
 ee_update_base_images: true
 ee_builder_dir_clean: true
-# ee_builder_dir: "/tmp"
+ee_builder_dir: "."
 ee_pull_collections_from_hub: true
 ee_verbosity: 1
 
@@ -15,8 +15,7 @@ ee_list:
   - name: ee-mitchell-labs-default
     tag: "{{ now(fmt='%m-%d-%Y') }}"
     build_items:
-      - "./files/{{ ocp_rpm_name }}"
-      - "./files/krb5.conf"
+      - /files
     build_files:
       - src: "{{ ocp_rpm_name }}"
         dest: folders
