@@ -27,7 +27,7 @@ ee_list:
         - ADD _build/folders/krb5.conf /etc/krb5.conf
         # dependencies for redhat.openshift_virtualization
         - ADD _build/folders/openshift-clients*.rpm /tmp/openshift-clients.rpm
-        - RUN $PKGMGR -y update && $PKGMGR -y install bash-completion && $PKGMGR clean all
+        - RUN $PKGMGR -y update && $PKGMGR -y install bash-completion
         - RUN rpm -ivh /tmp/openshift-clients.rpm && rm /tmp/openshift-clients.rpm
     dependencies:
       python_interpreter:
