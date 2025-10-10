@@ -25,6 +25,7 @@ ee_list:
       prepend_base:
         - RUN $PYCMD -m pip install --upgrade pip setuptools
         - ADD _build/folders/krb5.conf /etc/krb5.conf
+
         - RUN $PKGMGR -y remove python3.11-typing-extensions python3.11-referencing python3.11-jsonschema python3.11-ansible-compat python3.11-jsonschema-specifications ansible-lint
         - RUN $PYCMD -m pip install --upgrade pip setuptools
         # dependencies for redhat.openshift_virtualization
@@ -33,6 +34,10 @@ ee_list:
         #- RUN rpm -ivh /tmp/openshift-clients.rpm && rm /tmp/openshift-clients.rpm
       prepend_builder:
         - ENV PKGMGR_OPTS "--nodocs --setopt install_weak_deps=0 --enablerepo=rhocp-4.19-for-rhel-9-*-rpms"
+      prepend_final:
+        - ENV PKGMGR_OPTS "--nodocs --setopt install_weak_deps=0 --enablerepo=rhocp-4.19-for-rhel-9-*-rpms"
+      append_final:
+        - RUN ln -sf /usr/bin/python3.11 /usr/bin/python3
     dependencies:
       python_interpreter:
         python_path: "/usr/bin/python3.11"
