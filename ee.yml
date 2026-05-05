@@ -9,7 +9,7 @@ ee_pull_collections_from_hub: true
 ee_verbosity: 1
 
 # download from access.redhat.com -> Downloads -> OpenShift Container Platform -> Packages
-ocp_rpm_name: "openshift-clients-4.19.0-202506301438.p0.g298429b.assembly.stream.el9.x86_64.rpm"
+ocp_rpm_name: "openshift-clients-4.21.0-202603290052.p2.g9d9df34.assembly.stream.el9.x86_64.rpm"
 
 ee_list:
   - name: ee-mitchell-labs-default
@@ -33,9 +33,9 @@ ee_list:
         #- RUN $PKGMGR -y update && $PKGMGR -y install bash-completion && $PKGMGR clean all
         #- RUN rpm -ivh /tmp/openshift-clients.rpm && rm /tmp/openshift-clients.rpm
       prepend_builder:
-        - ENV PKGMGR_OPTS "--nodocs --setopt install_weak_deps=0 --enablerepo=rhocp-4.19-for-rhel-9-*-rpms"
+        - ENV PKGMGR_OPTS "--nodocs --setopt install_weak_deps=0 --enablerepo=rhocp-4.21-for-rhel-9-*-rpms"
       prepend_final:
-        - ENV PKGMGR_OPTS "--nodocs --setopt install_weak_deps=0 --enablerepo=rhocp-4.19-for-rhel-9-*-rpms"
+        - ENV PKGMGR_OPTS "--nodocs --setopt install_weak_deps=0 --enablerepo=rhocp-4.21-for-rhel-9-*-rpms"
       append_final:
         - RUN ln -sf /usr/bin/python3.11 /usr/bin/python3
     dependencies:
@@ -56,6 +56,7 @@ ee_list:
         collections:
           # General
           - name: community.general
+          - name: community.crypto
           # AAP
           - name: ansible.controller
           - name: ansible.platform
