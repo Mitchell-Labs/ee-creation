@@ -26,7 +26,7 @@ ee_list:
         - RUN $PYCMD -m pip install --upgrade pip setuptools
         - ADD _build/folders/krb5.conf /etc/krb5.conf
 
-        - RUN $PKGMGR -y remove python3.12-typing-extensions python3.12-referencing python3.12-jsonschema python3.12-ansible-compat python3.12-jsonschema-specifications ansible-lint
+        #- RUN $PKGMGR -y remove python3.12-typing-extensions python3.12-referencing python3.12-jsonschema python3.12-ansible-compat python3.12-jsonschema-specifications ansible-lint
         - RUN $PYCMD -m pip install --upgrade pip setuptools
         # dependencies for redhat.openshift_virtualization
         # - ADD _build/folders/openshift-clients*.rpm /tmp/openshift-clients.rpm
