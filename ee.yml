@@ -57,6 +57,8 @@ ee_list:
           # General
           - name: community.general
           - name: community.crypto
+          # Hashicorp
+          - name: community.hashi_vault
           # AAP
           - name: ansible.controller
           - name: ansible.platform
