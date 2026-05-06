@@ -49,6 +49,9 @@ ee_list:
         - pykerberos==1.2.4
         # Linux
         - firewall
+        # SSL
+        - paramiko>=3.4.0
+        - cryptography>=42.0.0
       system:
         # Required for microsoft.ad, needs to match version of python_path
         - python3.12-devel [platform:rpm]
